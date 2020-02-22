@@ -1,0 +1,69 @@
+<div class="jumbotron">
+
+<blockquote class="blockquote ml-5">
+    <h2 class="display-4 text-center">Bank Accounts</h2>
+    <footer class="blockquote-footer">
+        Inline table editing with <i>Angular8</i> and <i>Asp.Net Core</i>
+    </footer>
+
+</blockquote>
+    
+
+    <div class="grid-table">
+        <div class="thead">
+            <div class="tr">
+                <div class="td">Account No.</div>
+                <div class="td">Account Holder</div>
+                <div class="td">Bank</div>
+                <div class="td">IFSC</div>
+                <div class="td">
+                    <button class="btn btn-outline-dark" (click)="addBankAccountForm()">
+                     <mat-icon>add</mat-icon> 
+                       Nuova riga
+                    </button>        
+                </div>
+                
+                <div class="td">
+                    <span *ngIf="notification" class="elementToFadeInAndOut">
+                        <i class="fas fa-check-circle {{notification.class}}"></i>
+                        
+                        {{notification.message}}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="tbody">
+            <form class="tr" [formGroup]="fgroup" *ngFor="let fgroup of bankAccountForms.controls; let i=index;" (submit)="recordSubmit(fgroup)">
+                <div class="td">
+                    <input   class="form-control" formControlName="accountNumber">
+                </div>
+                <div class="td">
+                    <input   class="form-control" formControlName="accountHolder">
+                </div>
+                <div class="td">
+                    <!--<input   class="form-control" formControlName="bankID">-->
+                    <select   class="form-control" formControlName="bankID">  
+                        <option value="0">Select</option>
+                        <option *ngFor="let item of bankList" value="{{item.bankID}}">{{item.bankName}}</option>
+                    </select>
+                </div>                                
+                <div class="td">
+                    <input   class="form-control" formControlName="IFSC">  
+                </div>   
+                <div class="td">
+                    <button type="submit" class="btn btn-success" [disabled]="fgroup.invalid"
+                        [ngClass]="fgroup.get('bankAccountID').value==0?'btn-success':'btn-outline-dark'">
+                        <mat-icon>save_alt</mat-icon>
+                        {{fgroup.get('bankAccountID').value==0?'Submit':'Update'}}
+                    </button>
+                    <button class="btn btn-light ml-1" (click)="onDelete(fgroup.get('bankAccountID').value,i)">
+                        <mat-icon>delete</mat-icon>
+                       <!-- {{fgroup.get('bankAccountID').value==0?'Submit':'Update'}}-->
+                    </button>
+                </div>                             
+            </form>
+        </div>
+    </div>
+
+</div>

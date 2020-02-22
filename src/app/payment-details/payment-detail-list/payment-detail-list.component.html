@@ -1,0 +1,26 @@
+<!--
+<mat-form-field>
+    <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">  
+</mat-form-field>
+-->
+
+
+<table class="table table-hover">
+<!--
+    <tr > 
+            <td>CardOwnerName</td>
+            <td> CardNumber</td>
+            <td> ExpirationDate</td>
+    </tr>-->
+    <tr *ngFor="let objPaymentDetail of service.list">
+            
+        <td (click)="populateForm(objPaymentDetail)"> {{objPaymentDetail.CardOwnerName}}</td> 
+        <td (click)="populateForm(objPaymentDetail)"> {{objPaymentDetail.CardNumber}}</td>
+        <td (click)="populateForm(objPaymentDetail)"> {{objPaymentDetail.ExpirationDate}}</td>
+        <td>
+            <!-- <i class="far fa-trash-alt fa-lg text-danger"></i> -->
+            <mat-icon (click)="onDelete(objPaymentDetail.PMid)">delete</mat-icon>        
+        </td>
+    </tr>
+</table>
+

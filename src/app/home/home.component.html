@@ -1,0 +1,54 @@
+            <!-- AS: ATTENZIONE: l'istruzione {{userDetails.FullName}}  dà un errore in output (anche se il dato viene mostrato correttamente!!):
+            VM6539 HomeComponent.ngfactory.js:36 ERROR TypeError: Cannot read property 'FullName' of undefined at Object.eval [as updateRenderer]
+                
+            E' necessario aggiungere *ngIf="userDetails" nel tag <nav> !!!
+            -->
+
+<!--
+<div>
+    <nav class="navbar navbar-dark bg-dark" *ngIf="userDetails">
+        <a class="navbar-brand text-white">Benvenuto su iQApp - JWT Auth System</a>
+        
+        <div>
+            <a class="navbar-dark text-white" >{{userDetails.FullName}}     </a> 
+    
+            <a class="navbar-dark text-white"></a>
+            <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+        </div>
+    </nav>
+</div>
+-->
+
+<div class="data">
+    <!-- Formattazione, simbolo | (pipe)-->
+    <div>Data di oggi: {{startDate | date: 'dd/MM/yyyy'}} </div>
+</div>
+
+<!-- AS: dettaglio utente loggato -->
+<div class="card m-5" style="width:22rem" *ngIf="userDetails">
+    <ul class="list-group">
+        <li class="list-group-item"><strong>UserName: </strong>{{userDetails.UserName}}</li>
+        <li class="list-group-item"><strong>Badge: </strong>{{userDetails.Badge}}</li>
+        <li class="list-group-item"><strong>FullName: </strong>{{userDetails.FullName}}</li>
+        <li class="list-group-item"><strong>Email: </strong>{{userDetails.Email}}</li>
+    </ul>
+</div>
+
+<!-- AS: per DEBUG -->
+<!-- {{ticketList | json}} -->
+
+<!-- < (ticketSelected)="onTicketSelected($event)"-->
+
+<!--
+<div class="courses">
+    <ticket-card *ngFor="let ticket of ticketList; index as i" 
+        [ticket]="ticket" [ticketIndex]="i + 1">
+    </ticket-card>
+</div>
+-->
+<div class="ticket-card">
+    <ticket-card *ngFor="let ticket of tickets" 
+        [ticket]="ticket">
+    </ticket-card>
+</div>
+
