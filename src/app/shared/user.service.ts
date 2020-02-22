@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from 'src/environments/environment';
+//import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  //readonly BaseURI = "https://localhost:44306/api";
+  readonly BaseURI = "https://localhost:44306/api";
 
   formModel = this.fb.group(
       {
@@ -51,14 +51,14 @@ export class UserService {
       FullName: this.formModel.value.FullName,
       Password: this.formModel.value.Passwords.Password
     };
-    //return  this.http.post(this.BaseURI +'/User/Register', body );
-    return  this.http.post(environment.apiBaseURI +'/ApplicationUser/Register', body );
+    //return  this.http.post(environment.apiBaseURI +'/ApplicationUser/Register', body );
+    return  this.http.post(this.BaseURI +'/ApplicationUser/Register', body );
   }
 
 
   Login(formData){
-    //return this.http.post(this.BaseURI +'/ApplicationUser/Login', formData );
-    return this.http.post(environment.apiBaseURI +'/ApplicationUser/Login', formData );
+    //return this.http.post(environment.apiBaseURI +'/ApplicationUser/Login', formData );
+    return this.http.post(this.BaseURI  +'/ApplicationUser/Login', formData );
   }
 
   getUserProfile(){
@@ -67,11 +67,10 @@ export class UserService {
     //return tokenHeader;
 
     //return this.http.get(this.BaseURI + '/UserProfile', {headers: tokenHeader});
-
     //headers : req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token)'))
 
     //auth.interceptor
-    //return this.http.get(this.BaseURI + '/UserProfile', );
-    return this.http.get(environment.apiBaseURI + '/UserProfile', );
+    //return this.http.get(environment.apiBaseURI + '/UserProfile', );
+    return this.http.get(this.BaseURI  + '/UserProfile', );
   }
 }

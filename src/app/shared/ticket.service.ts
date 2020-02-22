@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+//import { environment } from 'src/environments/environment';
 
 import { Ticket } from '../model/ticket.model';
 
@@ -11,7 +11,7 @@ import { Ticket } from '../model/ticket.model';
 export class TicketService {
 
   //spostata su environment.ts
-  //readonly BaseURI = "https://localhost:44306/api";
+  readonly BaseURI = "https://localhost:44306/api";
 
   constructor(private http: HttpClient) { 
 
@@ -20,18 +20,21 @@ export class TicketService {
 
   getTicketDetail(ticketID )
   {
-    return this.http.get<Ticket>(environment.apiBaseURI + '/Ticket/' + ticketID);     //Dettaglio  singolo ticket
+    //return this.http.get<Ticket>(environment.apiBaseURI + '/Ticket/' + ticketID);     //Dettaglio  singolo ticket
+    return this.http.get<Ticket>(this.BaseURI + '/Ticket/' + ticketID);     //Dettaglio  singolo ticket
   }
 
   getTicketList_raw()
   {
-    return this.http.get(environment.apiBaseURI + '/Ticket'); 
+    //return this.http.get(environment.apiBaseURI + '/Ticket'); 
+    return this.http.get(this.BaseURI + '/Ticket'); 
   }
 
   getTicketList(): Observable<Ticket[]>
   {
     //return this.http.get<Ticket[]>(environment.apiBaseURI + '/Ticket'); 
-    return this.http.get<Ticket[]>(environment.apiBaseURI + '/Ticket?badge=666');     //QUI: filtro per utente loggato!!!!
+    //return this.http.get<Ticket[]>(environment.apiBaseURI + '/Ticket?badge=666');     //QUI: filtro per utente loggato!!!!
+    return this.http.get<Ticket[]>(this.BaseURI + '/Ticket?badge=666');     //QUI: filtro per utente loggato!!!!
   }
 
   /*
@@ -50,7 +53,8 @@ export class TicketService {
     console.log(ticket);
 
     // putBankAccount(formData){
-    return this.http.put(environment.apiBaseURI + '/Ticket/' + ticket, ticket.StatoTicket);
+    //return this.http.put(environment.apiBaseURI + '/Ticket/' + ticket, ticket.StatoTicket);
+    return this.http.put(this.BaseURI +  '/Ticket/' + ticket, ticket.StatoTicket);
   }
 
 }

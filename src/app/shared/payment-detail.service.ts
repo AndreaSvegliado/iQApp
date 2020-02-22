@@ -1,14 +1,14 @@
 import { PaymentDetail } from '../model/payment-detail.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';        //AS: reference per chiamata a WS
-import { environment } from 'src/environments/environment';
+//import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentDetailService {
   
-  //readonly rootURL = "https://localhost:44306/api";
+  readonly rootURL = "https://localhost:44306/api";
   formData:PaymentDetail
   list: PaymentDetail[];
 
@@ -26,21 +26,25 @@ export class PaymentDetailService {
   //AS: questa versione utilizza direttamente i parametri del servizio (this. ...)
   postPaymentDetail(){
     //return this.http.post(this.rootURL + '/PaymentDetail',this.formData)  
-    return this.http.post( environment.apiBaseURI + '/PaymentDetail',this.formData)  
+    //return this.http.post( environment.apiBaseURI + '/PaymentDetail',this.formData)  
+    return this.http.post( this.rootURL  + '/PaymentDetail',this.formData)  
 
   }  
   
   putPaymentDetail(){
-    return this.http.put( environment.apiBaseURI + '/PaymentDetail/' + this.formData.PMid,this.formData)    
+    //return this.http.put( environment.apiBaseURI + '/PaymentDetail/' + this.formData.PMid,this.formData)    
+    return this.http.put(  this.rootURL + '/PaymentDetail/' + this.formData.PMid,this.formData)    
   }
 
   deletePaymentDetail(  id  ){
-    return this.http.delete(  environment.apiBaseURI + '/PaymentDetail/' + id ) ;
+    //return this.http.delete(  environment.apiBaseURI + '/PaymentDetail/' + id ) ;
+    return this.http.delete(  this.rootURL + '/PaymentDetail/' + id ) ;
   }
 
   refreshList(){
     //AS: niente return ??
-     this.http.get(  environment.apiBaseURI + '/PaymentDetail')
+     //this.http.get(  environment.apiBaseURI + '/PaymentDetail')
+     this.http.get(  this.rootURL + '/PaymentDetail')
     .toPromise()            //AS ???
     .then(res => this.list = res as PaymentDetail[] );
   }

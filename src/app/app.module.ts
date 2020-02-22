@@ -31,6 +31,7 @@ import { BankAccountService } from './shared/bank-account.service';
 import { BankAccountComponent } from './bank-account/bank-account.component';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
