@@ -19,10 +19,10 @@ onKeyUp(newValue: string) {
 
 
 <!-- AS: le due righe seguenti producono lo stesso risultato 
- src={{ticket.iconUrl}}
- [src]="ticket.iconUrl"
+ src={{ticket.iconURL}}
+ [src]="ticket.iconURL"
 
- con la direttiva *ngIf="ticket.iconUrl", l'immagine viene mostrata solo se  ticket.iconUrl non è null
+ con la direttiva *ngIf="ticket.iconURL", l'immagine viene mostrata solo se  ticket.iconURL non è null
  con la direttiva *ngIf="ticket" a livello di classe ticket-card, la div viene mostrata solo se l'oggetto "ticket" non è null
  con la direttiva [ngClass] si può assegnare la classe in modo dinamico facendo riferimento ad un metodo (Conditional Class)
  con la direttiva [ngStyle] si può assegnare la classe in modo dinamico facendo riferimento ad un metodo (Conditional Style)
@@ -36,7 +36,8 @@ onKeyUp(newValue: string) {
 
         <div class="ticket-title">
             <!-- Versione con db-data:  {{ticketIndex}} - {{ticket.n_Ticket}}   -->
-            {{ticket.N_Ticket}}
+           {{ticket.N_Ticket}}
+           
         </div>
         <div [ngSwitch]="ticket.TipoTicket">
             <div class="ticket-tipo" *ngSwitchCase="'A'">Assistenza</div>
@@ -44,14 +45,14 @@ onKeyUp(newValue: string) {
         </div>
 
         <p></p>    
-        <img width="300" alt="Logo" *ngIf="ticket.iconUrl; else noImage"         
-            [src]="ticket.iconUrl" >
+        <img width="300" alt="Logo" *ngIf="ticket.iconURL; else noImage"         
+            [src]="ticket.iconURL" >
 
         <ng-template #noImage>
             <p>No image is avaiable.</p>
         </ng-template>
             
-        <div class="ticket-cliente">
+        <div class="ticket-Cliente">
             {{ticket.Cliente}} - {{ticket.Ragsoc}}
         </div>
 

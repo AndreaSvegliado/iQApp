@@ -1,12 +1,12 @@
 ////export class  Ticket {
 export interface Ticket {
-     id: number;
-     n_Ticket: string;
-     tipoTicket: string;
+     ID: number;
+     N_Ticket: string;
+     TipoTicket: string;
      StatoTicket: string;
      badge: string;
      tecnico:string;
-     cliente: string;
-     ragsoc: string;
+     Cliente: string;
+     Ragsoc: string;
      iconURL: string;
 }

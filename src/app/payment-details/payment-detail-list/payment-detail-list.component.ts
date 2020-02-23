@@ -15,7 +15,7 @@ export class PaymentDetailListComponent implements OnInit {
   //dataSourceArray = new MatTableDataSource();     //NC
 
 
-  constructor(private service: PaymentDetailService, private toastr: ToastrService) {
+  constructor(public service: PaymentDetailService, private toastr: ToastrService) {
     
    }
 

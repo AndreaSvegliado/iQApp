@@ -1,12 +1,10 @@
+
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-   <input type="hidden" name="PMId" [value]="service.formData.PMId">
+   <input type="hidden" name="PMid" [value]="service.formData.PMid">
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-prepend">
                 <div class="input-group-text bg-white">
-                    <!--Attenzione! classe Font Awesome!-->
-                    <!-- <i class="fas fa-user-circle" [class.green-icon]="CardOwnerName.valid" [class.red-icon]="CardOwnerName.invalid && CardOwnerName.touched"></i> -->
-
                     <mat-icon  [color] = "CardOwnerName.invalid && CardOwnerName.touched ? 'warn' : ''">perm_identity</mat-icon>                    
                 </div>
             </div>
@@ -14,7 +12,6 @@
                   class="form-control" placeholder="Card Owner Name" required>
         </div>    
     </div>
-
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-prepend">
@@ -68,4 +65,5 @@
             Nuovo
         </button>
     </div>
+
 </form>

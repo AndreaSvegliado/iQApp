@@ -50,7 +50,7 @@ export class TicketCardComponent implements OnInit, AfterViewInit, AfterContentI
 
     //this.localTicket.n_Ticket="TK19TEST";
     //this.myTicket.badge="99999";
-    //this.ragsoc="TEST ANDREA";
+    //this.Ragsoc="TEST ANDREA";
 
 
     //this.bankService.getBankList()

@@ -1,19 +1,19 @@
+<!--
 <nav class="navbar navbar-dark bg-dark" *ngIf="userDetails">
         <a class="navbar-brand text-white">Benvenuto su iQApp - JWT Auth System</a>
         
         <div>
-            <!-- AS: ATTENZIONE: la riga seguente dà un errore in output (anche se il dato viene mostrato correttamente!!):
+             AS: ATTENZIONE: la riga seguente dà un errore in output (anche se il dato viene mostrato correttamente!!):
             VM6539 HomeComponent.ngfactory.js:36 ERROR TypeError: Cannot read property 'FullName' of undefined at Object.eval [as updateRenderer]
                 
             E' necessario aggiungere *ngIf="userDetails" nel tag <nav> !!!
-            -->
             <a class="navbar-dark text-white">{{userDetails.FullName}}     </a> 
     
             <a class="navbar-dark text-white"></a>
             <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
         </div>
     </nav>
-    
+-->    
 
 <div class="jumbotron">
     <h1 class="display-4 text-center">Pagamenti</h1>

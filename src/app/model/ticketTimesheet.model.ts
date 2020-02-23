@@ -1,13 +1,13 @@
 import { Time } from '@angular/common';
 
 export interface TicketTimesheet {
-     id: number;
-     ticketID: number;
-     data: Date;
-     andata_Start: Time;
-     andata_End: Time;
+     ID: number;
+     TicketID: number;
+     Data: Date;
+     Andata_Start: Time;
+     Andata_End: Time;
 
-     mattino_Start: Time;
-     mattino_End: Time;
+     Mattino_Start: Time;
+     Mattino_End: Time;
 }
 

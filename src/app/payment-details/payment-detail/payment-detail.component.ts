@@ -13,7 +13,7 @@ export class PaymentDetailComponent implements OnInit {
 
   //constructor() { }
   //constructor(private service: PaymentDetailService) { }                                  //costruttore con il ref al servizio
-  constructor(private service: PaymentDetailService, private toastr: ToastrService) { }     //costruttore con il ref al componente per le animazioni
+  constructor(public service: PaymentDetailService, private toastr: ToastrService) { }     //costruttore con il ref al componente per le animazioni
 
   ngOnInit() {
     this.resetForm();

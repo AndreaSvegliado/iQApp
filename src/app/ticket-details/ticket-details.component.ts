@@ -24,13 +24,13 @@ export class TicketDetailsComponent implements OnInit {
 
   ngOnInit() {
 
-    let id = this.route.snapshot.params['id'];
+    let ID = this.route.snapshot.params['ID'];
 
-    this.ticketService.getTicketDetail(id).subscribe(t =>{  
+    this.ticketService.getTicketDetail(ID).subscribe(t =>{  
       this.ticket = t;
     })
     
-    this.timesheetService.getTimesheetList(id).subscribe(
+    this.timesheetService.getTimesheetList(ID).subscribe(
       res =>{
         if (res==[]){
           this.addTimesheetForm();
@@ -38,10 +38,10 @@ export class TicketDetailsComponent implements OnInit {
         else{
           (res as []).forEach((timesheet:any)=> {
             this.timesheetForms.push(this.fb.group({
-              id : [timesheet.ID],
-              ticketID :[timesheet.TicketID],
-              data :[timesheet.Data],
-              mattino_Start :[timesheet.Mattino_Start],
+              ID : [timesheet.ID],
+              TicketID :[timesheet.TicketID],
+              Data :[timesheet.Data],
+              Mattino_Start :[timesheet.Mattino_Start],
               //ticketData :[timesheet.Data, Validators.required]
               //Mattino_Start :[timesheet.mattino_Start],
               //Mattino_End :[timesheet.mattino_End]              
@@ -54,7 +54,10 @@ export class TicketDetailsComponent implements OnInit {
     )
   }
 
+  addRowForm(){
 
+  }
+  
   addTimesheetForm(){
     this.timesheetForms.push(this.fb.group({
       ID : [0],

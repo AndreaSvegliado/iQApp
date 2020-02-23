@@ -5,6 +5,8 @@
 
 {{ ticket|json}}
 
+
+
 <p></p>
 
 <div>
@@ -65,21 +67,25 @@
                 <div class="td">Mattino End</div>
             </div>
         </div>
+
+
+        
         <div class="tbody">
              
             <!--<form class="tr" [formGroup]="fgroup" *ngFor="let fgroup of timesheetForms.controls; let i=index;" (submit)="recordSubmit(fgroup)">-->
             <form class="tr" [formGroup]="fgroup" *ngFor="let fgroup of timesheetForms.controls; let i=index;">
+
                 <div class="td">
-                    <input   class="form-control" formControlName="id">
+                    <input   class="form-control" formControlName="ID">
                 </div>
                  <div class="td">
-                    <input   class="form-control" formControlName="ticketID">
+                    <input   class="form-control" formControlName="TicketID">
                 </div>
                 <div class="td">
-                    <input   class="form-control" formControlName="data">
+                    <input   class="form-control" formControlName="Data">
                 </div> 
                 <div class="td">
-                    <input   class="form-control" formControlName="mattino_Start">
+                    <input   class="form-control" formControlName="Mattino_Start">
                 </div>                 
             </form> 
     

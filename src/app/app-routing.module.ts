@@ -26,7 +26,7 @@ const routes: Routes = [
 
   { path:'home', component: HomeComponent, canActivate:[AuthGuard]  },
   { path:'ticket-card', component: TicketCardComponent, canActivate:[AuthGuard]},
-  { path:'ticket-details/:id', component: TicketDetailsComponent, canActivate:[AuthGuard]},
+  { path:'ticket-details/:ID', component: TicketDetailsComponent, canActivate:[AuthGuard]},
 
   { path:'payments', component: PaymentDetailsComponent, canActivate:[AuthGuard]},
   { path:'bank', component: BankAccountComponent, canActivate:[AuthGuard]},
@@ -40,6 +40,7 @@ const routes: Routes = [
     {path:'login', component: LoginComponent }     
     ]
   }
+
 ];
 
 @NgModule({

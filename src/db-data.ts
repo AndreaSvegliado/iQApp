@@ -3,8 +3,8 @@ export const TICKETS: any= [
 {
     id: 1,
     n_Ticket: "TK1900001",
-    iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png',
-    tipoTicket: "A",
+    iconURL: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-core-in-depth-small.png',
+    TipoTicket: "A",
     statoTicket: 70,
     badge: "666",
     clienteRagsoc: "Parpas S.p.A.",
@@ -13,7 +13,7 @@ export const TICKETS: any= [
 {
     id: 2,
     n_Ticket: "TK1900003",
-    tipoTicket: "I",
+    TipoTicket: "I",
     statoTicket: 70,
     badge: "666",
     clienteRagsoc: "OMV S.p.A.",
@@ -22,8 +22,8 @@ export const TICKETS: any= [
 {
     id: 3,
     n_Ticket: "TK1900004",
-    iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
-    tipoTicket: "A",
+    iconURL: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
+    TipoTicket: "A",
     statoTicket: 70,
     badge: "123",
     clienteRagsoc: "Breton",
@@ -32,8 +32,8 @@ export const TICKETS: any= [
 {
     id: 4,
     n_Ticket: "TK1900005",
-    iconUrl: 'https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small-v2.png',
-    tipoTicket: "A",
+    iconURL: 'https://angular-academy.s3.amazonaws.com/thumbnails/angular2-for-beginners-small-v2.png',
+    TipoTicket: "A",
     statoTicket: 80,
     badge: "234",
     clienteRagsoc: "FPT S.p.A.",
@@ -42,8 +42,8 @@ export const TICKETS: any= [
 {
     id: 5,
     n_Ticket: "TK1900006",
-    iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png',
-    tipoTicket: "I",
+    iconURL: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/security-cover-small-v2.png',
+    TipoTicket: "I",
     statoTicket: 90,
     badge: "235",
     clienteRagsoc: "Malvestio S.r.l.",

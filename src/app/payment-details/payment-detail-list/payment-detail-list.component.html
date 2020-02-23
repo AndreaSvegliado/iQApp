@@ -4,16 +4,14 @@
 </mat-form-field>
 -->
 
-
 <table class="table table-hover">
 <!--
     <tr > 
-            <td>CardOwnerName</td>
-            <td> CardNumber</td>
-            <td> ExpirationDate</td>
+        <td>CardOwnerName</td>
+        <td> CardNumber</td>
+        <td> ExpirationDate</td>
     </tr>-->
-    <tr *ngFor="let objPaymentDetail of service.list">
-            
+    <tr *ngFor="let objPaymentDetail of service.list">    
         <td (click)="populateForm(objPaymentDetail)"> {{objPaymentDetail.CardOwnerName}}</td> 
         <td (click)="populateForm(objPaymentDetail)"> {{objPaymentDetail.CardNumber}}</td>
         <td (click)="populateForm(objPaymentDetail)"> {{objPaymentDetail.ExpirationDate}}</td>
